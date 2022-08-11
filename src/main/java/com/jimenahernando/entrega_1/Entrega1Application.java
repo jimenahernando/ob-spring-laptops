@@ -15,7 +15,7 @@ public class Entrega1Application {
 
 		ApplicationContext context = SpringApplication.run(Entrega1Application.class, args);
 
-		LaptopRepository repository = (LaptopRepository) context.getBean(LaptopRepository.class);
+		LaptopRepository repository = context.getBean(LaptopRepository.class);
 
 		Laptop macPro = new Laptop(null, "Apple", "MacBook Pro", LocalDate.of(2021, 12, 10));
 		Laptop dynaBook = new Laptop(null, "Toshiba", "DynaBook", LocalDate.of(2020, 1, 1));
@@ -23,7 +23,7 @@ public class Entrega1Application {
 		repository.save(macPro);
 		repository.save(dynaBook);
 
-		System.out.println(repository.count());
+		System.out.println("Cantidad de libros en memoria: " + repository.count());
 	}
 
 }
